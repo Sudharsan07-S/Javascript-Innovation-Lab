@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+ </head>
+<body>
+    <h2>Minin Text Analyzer</h2>
+    <textarea id="paragraphInput"placeholder="Enter a paragraph"
+    rows="6" cols="60"></textarea><br />
+    <button onclick="analyzerText()">Analyzer</button>
+    <pre id="output"></pre>
+    <script>
+        function analyzerText(){
+            let text=document.getElementById("paragraphInput").value;
+            let totalcharacter=text.length;
+            let words=text.match(/\b\w+\b/g)|| [];
+            let totalwords=words.length;
+            let sentence=text.match(/[.]/g);
+            let output=`Total character:${totalcharacter} words:${totalwords}`
+            document.getElementById("output").innerText=output;
+
+        }
+    </script>
+</body>
+</html>
